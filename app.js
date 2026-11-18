@@ -108,7 +108,7 @@ function render() {
   <div class="landing">
     <header class="site-header">
       <a class="brand" href="#/">
-        <span class="brand-mark">▶</span>
+        <img class="brand-icon" src="favicon.ico" alt="" />
         <span class="brand-name">youtify<span class="brand-dot">.</span></span>
       </a>
       <div class="header-actions">
@@ -136,7 +136,7 @@ function render() {
           </div>
           <div class="app-window">
             <div class="mock-sidebar">
-              <div class="mock-brand"><span class="brand-mark">▶</span> youtify<span class="brand-dot">.</span></div>
+              <div class="mock-brand"><img class="brand-icon" src="favicon.ico" alt="" /> youtify<span class="brand-dot">.</span></div>
               <div class="mock-nav"><span class="active">⌂ ${t('heroMain')}</span><span>⌕ ${t('heroSearch')}</span><span>✦ ${t('heroMix')}</span><span>♫ ${t('heroPlaylists')}</span></div>
               <div class="mock-side-title">${t('yourPlaylists')}</div>
               <div class="mock-playlist"><i class="liked">♥</i><span>${t('heroLiked')}<small>12</small></span></div>

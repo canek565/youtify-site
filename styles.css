@@ -77,6 +77,8 @@ svg { width: 20px; height: 20px; display: block; flex: none; }
   box-shadow: 0 6px 18px var(--red-glow-mark);
 }
 .brand-mark svg { width: 17px; height: 17px; }
+.brand-icon { width: 34px; height: 34px; border-radius: 10px; display: block; object-fit: cover; }
+.mock-brand .brand-icon { width: 20px; height: 20px; border-radius: 6px; display: inline-block; vertical-align: middle; }
 .brand-name { font-size: 21px; font-weight: 800; letter-spacing: -.8px; }
 .brand-dot { color: var(--red); }
 
