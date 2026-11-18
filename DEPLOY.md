@@ -45,6 +45,22 @@ git push
 3. `git add downloads-config.js && git commit -m "Update download links" && git push` —
    Vercel автоматически пересоберёт сайт.
 
+## Уведомления об обновлениях в приложении
+
+Приложение при запуске и каждые 6 часов считывает файл `update.json` из этого репозитория
+(`https://raw.githubusercontent.com/canek565/youtify-site/master/update.json`) и сравнивает
+версию со своей. Если версия в `update.json` новее — показывает тост и раздел с кнопкой
+скачивания в **Настройках** приложения.
+
+Чтобы объявить обновление:
+
+1. Опубликуй новые EXE в GitHub Releases (например, `v0.1.1`).
+2. В `update.json` измени `version` на новую (например, `"0.1.1"`), при необходимости обнови
+   `url` и `notes`.
+3. Закоммить и запушить: `git add update.json && git commit -m "Release v0.1.1" && git push`.
+
+Уведомление у всех пользователей появится в течение 6 часов (или сразу после перезапуска приложения).
+
 ## Вариант с Vercel CLI (без GitHub-интеграции)
 
 ```powershell
