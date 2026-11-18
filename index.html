@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="theme-color" content="#08080a" />
+  <meta name="description" content="Youtify — музыка из YouTube Music и Spotify в одном месте. Слушай в браузере или скачай приложение." />
+  <title>Youtify — музыка без границ</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="styles.css" />
+  <link rel="stylesheet" href="app-ui.css" />
+</head>
+<body>
+  <div id="app"></div>
+  <audio id="mainAudio" preload="metadata"></audio>
+  <div id="modalRoot"></div>
+  <div id="toastRoot" class="toast-root"></div>
+  <noscript>Для работы сайта включите JavaScript.</noscript>
+  <script>window.YOUTIFY_SYNC_PORT = window.YOUTIFY_SYNC_PORT || 0;</script>
+  <script src="youtify-config.js" onerror="void 0"></script>
+  <script src="downloads-config.js"></script>
+  <script src="app.js"></script>
+</body>
+</html>
