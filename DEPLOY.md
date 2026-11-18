@@ -4,11 +4,12 @@
 EXE-файлы (~103 МБ каждый) остаются на **GitHub Releases** — посетители скачивают приложение оттуда.
 Ссылки уже прописаны в `downloads-config.js` и проверены:
 
-- `https://github.com/canek565/youtify-site/releases/download/v0.1.0/Youtify.Setup.0.1.0.exe`
-- `https://github.com/canek565/youtify-site/releases/download/v0.1.0/Youtify.exe`
+- `https://github.com/canek565/youtify-site/releases/download/v0.1.1/Youtify.Setup.0.1.1.exe`
+- `https://github.com/canek565/youtify-site/releases/download/v0.1.1/Youtify.exe`
 
-> EXE в релизе `v0.1.0` перезалиты 18.11.2026: это сборка с исправленными переводами
-> (EN/UK/RU). Ссылки не менялись — обновились только файлы в релизе.
+> Актуальная версия — `v0.1.1` (полные треки, ручной выбор источника, уведомления об
+> обновлениях и полный перевод EN/UK/RU). Версия в `update.json` тоже `0.1.1`, поэтому
+> пользователи с `0.1.0` получат уведомление о новой версии.
 
 ## 1. Закоммитить и запушить сайт
 
