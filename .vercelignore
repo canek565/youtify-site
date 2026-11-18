@@ -1,0 +1,7 @@
+.git/
+downloads/
+release.ps1
+DEPLOY.md
+README.md
+*.log
+.DS_Store

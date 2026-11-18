@@ -26,9 +26,14 @@ const STRINGS = {
     f6: 'Fast start', f6d: 'Opens instantly, all data stays local.',
     platforms: 'Platforms', platformsHint: 'availability',
     win: 'Windows', winState: 'Available now', linux: 'Linux', linuxState: 'Coming soon',
-    heroMain: 'Главная', heroSearch: 'Поиск', heroMix: 'Подборка', heroPlaylists: 'Плейлисты',
+    yourPlaylists: 'YOUR PLAYLISTS',
+    heroMain: 'Home', heroSearch: 'Search', heroMix: 'Made for you', heroPlaylists: 'Playlists',
     heroTitle: 'All your music.\nOne app.', heroCta: 'Start searching',
-    heroLiked: 'Liked songs', heroPlaylist: 'Night drive'
+    heroLiked: 'Liked songs', heroPlaylist: 'Night drive',
+    pageTitle: 'Youtify — music without borders',
+    pageDesc: 'Youtify is a desktop player for Windows: three platforms in one search. Listen in the browser or download the app.',
+    noScript: 'Enable JavaScript to use this site.',
+    languageButton: 'Change language'
   },
   uk: {
     download: 'Скачати', install: 'Скачати інсталятор (.exe)', portable: 'Портативна версія',
@@ -45,9 +50,14 @@ const STRINGS = {
     f6: 'Швидкий старт', f6d: 'Відкривається одразу, дані залишаються локальними.',
     platforms: 'Платформи', platformsHint: 'доступність',
     win: 'Windows', winState: 'Вже доступно', linux: 'Linux', linuxState: 'Незабаром',
+    yourPlaylists: 'ТВОЇ ПЛЕЙЛИСТИ',
     heroMain: 'Головна', heroSearch: 'Пошук', heroMix: 'Підбірка', heroPlaylists: 'Плейлисти',
     heroTitle: 'Вся музика.\nОдин застосунок.', heroCta: 'Почати пошук',
-    heroLiked: 'Улюблені треки', heroPlaylist: 'Нічна їзда'
+    heroLiked: 'Улюблені треки', heroPlaylist: 'Нічна їзда',
+    pageTitle: 'Youtify — музика без меж',
+    pageDesc: 'Youtify — десктопний плеєр для Windows: три платформи в одному пошуку. Слухай у браузері або завантаж застосунок.',
+    noScript: 'Для роботи сайту увімкни JavaScript.',
+    languageButton: 'Змінити мову'
   },
   ru: {
     download: 'Скачать', install: 'Скачать установщик (.exe)', portable: 'Портативная версия',
@@ -64,9 +74,14 @@ const STRINGS = {
     f6: 'Быстрый запуск', f6d: 'Окно открывается сразу, данные остаются локальными.',
     platforms: 'Платформы', platformsHint: 'доступность',
     win: 'Windows', winState: 'Уже доступно', linux: 'Linux', linuxState: 'Скоро выйдет',
+    yourPlaylists: 'ТВОИ ПЛЕЙЛИСТЫ',
     heroMain: 'Главная', heroSearch: 'Поиск', heroMix: 'Подборка', heroPlaylists: 'Плейлисты',
     heroTitle: 'Вся музыка.\nОдно приложение.', heroCta: 'Начать поиск',
-    heroLiked: 'Любимые треки', heroPlaylist: 'Ночная езда'
+    heroLiked: 'Любимые треки', heroPlaylist: 'Ночная езда',
+    pageTitle: 'Youtify — музыка без границ',
+    pageDesc: 'Youtify — десктопный плеер для Windows: три платформы в одном поиске. Слушай в браузере или скачай приложение.',
+    noScript: 'Для работы сайта включите JavaScript.',
+    languageButton: 'Сменить язык'
   }
 };
 
@@ -74,9 +89,17 @@ function t(key) {
   return (STRINGS[lang] || STRINGS.en)[key] || STRINGS.en[key] || key;
 }
 
+function applyLang() {
+  document.documentElement.lang = lang;
+  document.title = t('pageTitle');
+  const meta = document.querySelector('meta[name="description"]');
+  if (meta) meta.setAttribute('content', t('pageDesc'));
+}
+
 function setLang(next) {
   lang = next;
   localStorage.setItem('youtify_site_lang', lang);
+  applyLang();
   render();
 }
 
@@ -89,7 +112,7 @@ function render() {
         <span class="brand-name">youtify<span class="brand-dot">.</span></span>
       </a>
       <div class="header-actions">
-        <button class="lang-button" id="langButton" title="Language">${lang.toUpperCase()}</button>
+        <button class="lang-button" id="langButton" title="${t('languageButton')}">${lang.toUpperCase()}</button>
         <a class="btn btn-primary" href="${DOWNLOADS.installer}" download>${t('download')}</a>
       </div>
     </header>
@@ -115,7 +138,7 @@ function render() {
             <div class="mock-sidebar">
               <div class="mock-brand"><span class="brand-mark">▶</span> youtify<span class="brand-dot">.</span></div>
               <div class="mock-nav"><span class="active">⌂ ${t('heroMain')}</span><span>⌕ ${t('heroSearch')}</span><span>✦ ${t('heroMix')}</span><span>♫ ${t('heroPlaylists')}</span></div>
-              <div class="mock-side-title">ТВОИ ПЛЕЙЛИСТЫ</div>
+              <div class="mock-side-title">${t('yourPlaylists')}</div>
               <div class="mock-playlist"><i class="liked">♥</i><span>${t('heroLiked')}<small>12</small></span></div>
               <div class="mock-playlist"><i>▣</i><span>${t('heroPlaylist')}<small>8</small></span></div>
             </div>
@@ -162,4 +185,5 @@ function render() {
   }
 }
 
+applyLang();
 render();
