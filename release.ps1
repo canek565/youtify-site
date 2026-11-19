@@ -1,7 +1,7 @@
 param(
   [Parameter(Mandatory = $true)][string]$Repo,
   [string]$Tag = 'v0.1.1',
-  [string]$ExeDir = 'F:\prilojenie\dist'
+  [string]$ExeDir = 'F:\Youtify_project\youtify\dist'
 )
 
 $ErrorActionPreference = 'Stop'

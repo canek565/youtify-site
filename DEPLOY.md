@@ -14,7 +14,7 @@ EXE-файлы (~103 МБ каждый) остаются на **GitHub Releases*
 ## 1. Закоммитить и запушить сайт
 
 ```powershell
-cd F:\saytyoutify
+cd F:\Youtify_project\youtifysite
 git add .
 git commit -m "Fix languages, prepare Vercel deploy"
 git push
@@ -40,7 +40,7 @@ git push
 
 ## 3. Обновление ссылок на новые версии
 
-1. Собери новую версию в `F:\prilojenie` через `npm run dist`, залей EXE в новый GitHub Release
+1. Собери новую версию в `F:\Youtify_project\youtify` через `npm run dist`, залей EXE в новый GitHub Release
    (скрипт `.\release.ps1 -Repo "canek565/youtify-site" -Tag "v0.2.0"`).
 2. Поправь URL в `downloads-config.js`.
 3. `git add downloads-config.js && git commit -m "Update download links" && git push` —
@@ -66,7 +66,7 @@ git push
 
 ```powershell
 npm i -g vercel
-cd F:\saytyoutify
+cd F:\Youtify_project\youtifysite
 vercel          # первый раз — логин и вопросы по проекту
 vercel --prod   # продакшен-деплой
 ```
